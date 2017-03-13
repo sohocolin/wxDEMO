@@ -192,7 +192,7 @@ Page({
   loading (close) {
     if (!close) {
       wx.showToast({
-        title: '加载中',
+        title: '加载中yiqun',
         icon: 'loading',
         duration: 10000,
       });
