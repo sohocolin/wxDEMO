@@ -200,4 +200,11 @@ Page({
       wx.hideToast();
     }
   },
+
+  onShareAppMessage: function () {
+    return {
+      title: '优惠尽在青浦奥莱',
+      path: 'index'
+    }
+  }
 })
