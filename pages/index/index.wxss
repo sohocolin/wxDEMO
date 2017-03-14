@@ -82,17 +82,20 @@
 }
 
 .main-list {
-  background: #fff;
+  /*background: #fff;*/
   margin-top: .5rem;
-  padding: .5rem;
+  /*padding: .5rem;*/
 }
+/*
 .main-list .list-item {
   border: 1px solid #ddd;
 }
+*/
 .main-list .list-item:not(:first-child) {
-  margin-top: .5rem;
+  margin-top: .2rem;
 }
 .main-list .list-content {
+  background: #fff;
   position: relative;
   padding: .3rem .5rem;
 }
