@@ -82,4 +82,13 @@ Page({
       wx.hideToast();
     }
   },
+
+  // 全局分享
+  onShareAppMessage: function () {
+    var id = this.data.detailID
+    return {
+      title: '优惠尽在青浦奥莱',
+      path: 'detail?id=' + id
+    }
+  }
 })

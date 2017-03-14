@@ -20,6 +20,10 @@ Page({
     dateListArray: ['日','一','二','三','四','五','六'],
   },
   onLoad (option) {
+    var type = typeof option.type == 'undefined' ? true : false
+    this.setData({
+      activityOrBrand: type
+    })
     var that = this;
     // this.loading();
     this.initDate(); // 日历组件程序
@@ -141,7 +145,8 @@ Page({
   },
   // 列表数据
   loadList (reFresh) {
-    var dateStr = this.data.dateCurrentStr + ' 00:00:00',
+    // var dateStr = this.data.dateCurrentStr + ' 00:00:00',
+    var dateStr = this.data.dateCurrentStr,
         flag = this.data.activityOrBrand,
         _data = this.data.list,
         _list = (flag==true ? _data.activity : _data.brand),
@@ -202,9 +207,10 @@ Page({
   },
 
   onShareAppMessage: function () {
+    var type = this.data.activityOrBrand
     return {
       title: '优惠尽在青浦奥莱',
-      path: 'index'
+      path: 'index?type=' + type
     }
   }
 })
