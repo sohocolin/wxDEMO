@@ -97,21 +97,21 @@
   padding: .3rem .5rem;
 }
 .main-list .list-title {
-    word-wrap: normal;
+  word-wrap: normal;
   font-weight: bold;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  padding-right: 7.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /*padding-right: 7.5rem;*/
 }
 .main-list .list-time {
   font-size: .8em;
-  margin-top: .2em;
+  /*margin-top: .2em;*/
   text-align: right;
-  position: absolute;
+  /*position: absolute;
   right: .5rem;
   bottom: .3rem;
-  width: 12em;
+  width: 12em;*/
 }
 
 
