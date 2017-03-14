@@ -37,8 +37,8 @@
               <image src="{{'http://sum.kdcer.com'+item.Content.PictureUrl}}" class="bg"/>
             </view>
             <view class="list-content">
-              <text class="list-title">{{item.Title}}</text>
-              <text class="list-time">{{item.Time}}</text>
+              <view class="list-title">{{item.Title}}</view>
+              <view class="list-time">{{item.Time}}</view>
             </view>
           </navigator>
         </block>
