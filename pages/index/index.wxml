@@ -32,7 +32,7 @@
       <view class="list-box activity-list" wx:if="{{activityOrBrand==true}}">
         <block wx:for="{{list.activity.data}}" wx:key="{{item.Id}}">
           <navigator url="../detail/detail?id={{item.Id}}" class="list-item">
-            <view class="timeState" wx:if="{{item.TimeState}}">活动已结束</view>
+            <!--<view class="timeState" wx:if="{{item.TimeState}}">活动已结束</view>-->
             <view class="list-img imgRadio">
               <image src="{{'http://sum.kdcer.com'+item.Content.PictureUrl}}" class="bg"/>
             </view>
