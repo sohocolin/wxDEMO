@@ -192,7 +192,7 @@ Page({
   loading (close) {
     if (!close) {
       wx.showToast({
-        title: '加载中yiqun',
+        title: '加载中yiqun&zyh',
         icon: 'loading',
         duration: 10000,
       });
@@ -203,7 +203,7 @@ Page({
 
   onShareAppMessage: function () {
     return {
-      title: '优惠尽在青浦奥莱',
+      title: '优惠在青浦奥莱',
       path: 'index'
     }
   }
