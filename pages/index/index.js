@@ -210,7 +210,7 @@ Page({
     var type = this.data.activityOrBrand
     return {
       title: '优惠尽在青浦奥莱',
-      path: 'index?type=' + type
+      path: 'pages/index/index?type=' + type
     }
   }
 })
