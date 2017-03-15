@@ -49,11 +49,17 @@ function Type(obj) {
     return typeStr.substr(0, typeStr.length - 1).toLowerCase();
 }
 
+function isEmpty(obj) {
+    for (var i in obj) return false;
+    return true;
+}
+
 module.exports = {
   formatTime: formatTime,
   formatDate: formatDate,
   DateAddDay: DateAddDay,
   FirstDayInThisWeek: FirstDayInThisWeek,
-  type: Type,
+  typeOf: Type,
   addZero: formatNumber,
+  isEmpty: isEmpty,
 }

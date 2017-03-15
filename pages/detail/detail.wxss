@@ -46,3 +46,11 @@
     text-align: right;
     color: #f24f74;
 }
+
+.backToIndex {
+    padding: .3rem .5rem .3rem .5rem;
+    margin: -.3rem .5rem -.3rem -.5rem;
+}
+.backToIndex:before {
+    content: "\276E";
+}

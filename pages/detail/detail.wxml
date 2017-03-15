@@ -8,6 +8,7 @@
             </swiper-item>
         </swiper>
         <view class="title">
+            <text class="backToIndex" bindtap="backToIndex"></text>
             <text>{{detail.Title}}</text>
             <text class="isOld">{{!detail.IsTheme?'(已结束)':''}}</text>
         </view>

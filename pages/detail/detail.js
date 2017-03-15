@@ -18,6 +18,12 @@ Page({
     });
   },
   onLoad (options) {
+    if (typeof options.first !== 'undefined') {
+      this.setData({
+        firstLoad: true
+      })
+      console.log('加载时', this.data.firstLoad)
+    }
     this.loadList(options.id, false);
   },
 
@@ -88,7 +94,18 @@ Page({
     var id = this.data.detailID
     return {
       title: '优惠尽在青浦奥莱',
-      path: 'detail?id=' + id
+      path: 'pages/detail/detail?id=' + id + '&first=true'
     }
+  },
+
+  backToIndex: function(){
+    console.log('点击时', this.data.firstLoad)
+    if (this.data.firstLoad) {
+        wx.redirectTo({
+          url: '../index/index',
+        });
+        return;
+    }
+    wx.navigateBack()
   }
 })

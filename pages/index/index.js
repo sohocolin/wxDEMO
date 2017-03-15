@@ -20,7 +20,12 @@ Page({
     dateListArray: ['日','一','二','三','四','五','六'],
   },
   onLoad (option) {
-    var type = typeof option.type == 'undefined' ? true : false
+    var type = this.data.activityOrBrand;
+    if (!utils.isEmpty(option)) {
+      if (typeof option.type !== 'undefined') {
+        type = option.type == 'true' ? true: false
+      }
+    }
     this.setData({
       activityOrBrand: type
     })
@@ -52,11 +57,14 @@ Page({
   // 顶部 tab 部分
   // ----------------------------
   choose1 (e) {
-    var that = this;
+    var flag = this.data.activityOrBrand;
     this.setData({
-      activityOrBrand: !that.data.activityOrBrand,
+      activityOrBrand: !flag,
     });
-    this.loadList();
+    var list = this.data.list;
+    var type = !flag ? 'activity' : 'brand'
+    // console.log(type, list[type])
+    if (list[type].data.length < 1) this.loadList(true);
   },
 
   // 日历组件部分
@@ -152,16 +160,15 @@ Page({
         _list = (flag==true ? _data.activity : _data.brand),
         pageNo = reFresh ? 1 : ++_list.pageNo,
         list = reFresh ? [] : _list.data;
-    // console.log(dateStr, flag, pageNo, list);
+    // console.log(dateStr, flag, pageNo, list, typeof flag);
     
     // 请求数据接口
     var that = this;
     that.loading();
-    console.log(flag, pageNo, dateStr);
     wx.request({
       url: "https://sum.kdcer.com/api/Applet/GetTest?dirFlag="+flag+"&pageNo="+pageNo+"&pageSize=10&dt="+dateStr,
       success (res) {
-        console.log(res.data)
+        // console.log('列表结果',res.data)
         that.loading('close');
  
         if (flag) {
@@ -210,7 +217,7 @@ Page({
     var type = this.data.activityOrBrand
     return {
       title: '优惠尽在青浦奥莱',
-      path: 'index?type=' + type
+      path: 'pages/index/index?type=' + type
     }
   }
 })
