@@ -80,6 +80,13 @@
   border: 2px solid #000;
   border-radius: 100%;
 }
+.weekday .week:first-child,
+.weekday .week:last-child,
+.dateday .day:first-child,
+.dateday .day:last-child {
+  color: #e02d2d;
+  font-weight: bold;
+}
 
 .main-list {
   background: #fff;
